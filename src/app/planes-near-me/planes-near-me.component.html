@@ -1,0 +1,47 @@
+<div class="section-14">
+  <div data-collapse="none" data-animation="default" data-duration="400" class="navbar-2 w-nav">
+    <div class="container-20 w-container">
+      <app-navigation-bar></app-navigation-bar>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-plane-title w-container">
+    <h1 class="page-title">Planes</h1>
+    <div class="container-plane-button w-container">
+      <a (click)="getNearPlanes(latitude, longitude, radius)" class="button-planes w-button">Refresh</a>
+      <a (click)="onClickEverywhereButton()" class="button-planes w-button">Everywhere</a>
+    </div>
+  </div>
+  <div class="container-15 w-container">
+    <div class="div-block-planes-radar">
+      <div class="planes-near-me w-row">
+        <div *ngIf="checkPlane(0)" class="w-col w-col-4"><a (click)="onClickPlane(planes[0])" class="link-block-planeradar w-inline-block"><img src={{getImage(planes[0])}} width="279" srcset="assets/images/noun_945767_cc-p-500.png 500w, assets/images/noun_945767_cc.png 700w" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"><div class="div-block-25"></div><div class="text-block-6">#{{planes[0].tag}}</div></a></div>
+        <div *ngIf="checkPlane(1)" class="w-col w-col-4"><a (click)="onClickPlane(planes[1])" class="link-block-planeradar w-inline-block"><img src={{getImage(planes[1])}} width="279" srcset="assets/images/plane_strawberry-p-500.png 500w, assets/images/plane_strawberry.png 700w" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"><div class="div-block-25"></div><div class="text-block-6">#{{planes[1].tag}}</div></a></div>
+        <div *ngIf="checkPlane(2)" class="w-col w-col-4"><a (click)="onClickPlane(planes[2])" class="link-block-planeradar w-inline-block"><img src={{getImage(planes[2])}} width="279" srcset="assets/images/plane_mango-p-500.png 500w, assets/images/plane_mango.png 700w" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"><div class="div-block-25"></div><div class="text-block-6">#{{planes[2].tag}}</div></a></div>
+        <div *ngIf="!checkPlane(0)" class="w-col w-col-4"><img src="assets/images/nothing.png" width="279" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"></div>
+        <div *ngIf="!checkPlane(1)" class="w-col w-col-4"><img src="assets/images/nothing.png" width="279" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"></div>
+        <div *ngIf="!checkPlane(2)" class="w-col w-col-4"><img src="assets/images/nothing.png" width="279" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"></div>
+      </div>
+      <div class="row-6 w-row">
+        <div *ngIf="checkPlane(3)" class="w-col w-col-4"><a (click)="onClickPlane(planes[3])" class="link-block-planeradar w-inline-block"><img src={{getImage(planes[3])}} width="279" srcset="assets/images/plane_melon-p-500.png 500w, assets/images/plane_melon.png 700w" sizes="(max-width: 479px) 89px, (max-width: 767px) 19vw, 93.32292175292969px"><div class="div-block-25"></div><div class="text-block-6">#{{planes[3].tag}}</div></a></div>
+        <div *ngIf="!checkPlane(3)" class="w-col w-col-4"><img src="assets/images/nothing.png" width="279" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"></div>
+        <div class="column-9 w-col w-col-4">
+          <div class="div-block-29"><a (click)="getNearPlanes(latitude, longitude, 5)" class="button-5 w-button">5</a><a (click)="getNearPlanes(latitude, longitude, 25)" class="button-5 w-button">25</a><a (click)="getNearPlanes(latitude, longitude, 100)" class="button-5 w-button">100</a></div>
+          <h4 class="heading-12">km</h4>
+        </div>
+        <div *ngIf="checkPlane(4)" class="w-col w-col-4"><a (click)="onClickPlane(planes[4])" class="link-block-planeradar w-inline-block"><img src={{getImage(planes[4])}} width="279" srcset="assets/images/plane_blueberry-p-500.png 500w, assets/images/plane_blueberry.png 700w" sizes="(max-width: 479px) 89px, (max-width: 767px) 19vw, 93.32292175292969px"><div class="div-block-25"></div><div class="text-block-6">#{{planes[4].tag}}</div></a></div>
+        <div *ngIf="!checkPlane(4)" class="w-col w-col-4"><img src="assets/images/nothing.png" width="279" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"></div>
+      </div>
+      <div class="planes-near-me w-row">
+        <div *ngIf="checkPlane(5)" class="w-col w-col-4"><a (click)="onClickPlane(planes[5])" class="link-block-planeradar w-inline-block"><img src={{getImage(planes[5])}} width="279" srcset="assets/images/noun_945767_cc-p-500.png 500w, assets/images/noun_945767_cc.png 700w" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"><div class="div-block-25"></div><div class="text-block-6">#{{planes[5].tag}}</div></a></div>
+        <div *ngIf="checkPlane(6)" class="w-col w-col-4"><a (click)="onClickPlane(planes[6])" class="link-block-planeradar w-inline-block"><img src={{getImage(planes[6])}} width="279" srcset="assets/images/plane_jasmine-p-500.png 500w, assets/images/plane_jasmine.png 700w" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"><div class="div-block-25"></div><div class="text-block-6">#{{planes[6].tag}}</div></a></div>
+        <div *ngIf="checkPlane(7)" class="w-col w-col-4"><a (click)="onClickPlane(planes[7])" class="link-block-planeradar w-inline-block"><img src={{getImage(planes[7])}} width="279" srcset="assets/images/noun_945767_cc-p-500.png 500w, assets/images/noun_945767_cc.png 700w" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"><div class="div-block-25"></div><div class="text-block-6">#{{planes[7].tag}}</div></a></div>
+        <div *ngIf="!checkPlane(5)" class="w-col w-col-4"><img src="assets/images/nothing.png" width="279" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"></div>
+        <div *ngIf="!checkPlane(6)" class="w-col w-col-4"><img src="assets/images/nothing.png" width="279" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"></div>
+        <div *ngIf="!checkPlane(7)" class="w-col w-col-4"><img src="assets/images/nothing.png" width="279" sizes="(max-width: 479px) 279px, (max-width: 767px) 58vw, 93.32292175292969px"></div>
+      </div>
+    </div>
+  </div>
+</div>

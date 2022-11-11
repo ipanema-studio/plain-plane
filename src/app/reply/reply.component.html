@@ -1,0 +1,28 @@
+<div class="section-8">
+  <div data-collapse="none" data-animation="default" data-duration="400" class="navbar-2 w-nav">
+    <div class="container-20 w-container">
+      <app-navigation-bar></app-navigation-bar>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-page-title w-container">
+    <h1 class="page-title">Reply</h1>
+  </div>
+  <div class="container-paper w-container">
+    <div class="form-block-paper w-form">
+      <form id="email-form" name="email-form" data-name="Email Form">
+        <p class="paragraph-reply-content">{{plane.content}}</p>
+        <div class="text-block-reply-hashtag">#{{plane.tag}}</div>
+        <div class="div-block-10"></div>
+        <textarea [(ngModel)]="replyMessage" id="Reply" name="Reply" placeholder="Write your reply" maxlength="5000" data-name="Reply" class="textarea-paper w-input"></textarea>
+        <div class="div-block-paper-button">
+          <a (click)="onClickReportButton()" class="button-reply w-button">Report</a>
+          <a (click)="onClickCancelButton()" class="button-reply w-button">Cancel</a>
+          <a (click)="onClickRefoldButton()" class="button-reply w-button">Refold</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

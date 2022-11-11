@@ -1,0 +1,38 @@
+<div class="section-planelistrandom">
+  <div data-collapse="none" data-animation="default" data-duration="400" class="navbar-2 w-nav">
+    <div class="container-20 w-container">
+      <app-navigation-bar></app-navigation-bar>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-page-title w-container">
+    <h1 class="page-title">Planes</h1>
+    <div class="container-plane-button w-container">
+      <a (click)="getRandomPlanes()" class="button-planes w-button">Refresh</a>
+      <a (click)="onClickNearMeButton()" class="button-planes w-button">Near Me</a>
+    </div>
+  </div>
+  <div class="w-container">
+    <div class="row-planelistrandom w-row">
+      <div *ngIf="checkPlane(0)" class="column w-col w-col-4"><a (click)="onClickPlane(planes[0])" class="link-block-plane w-inline-block"><img src={{getImage(planes[0])}} width="124" sizes="124px"><div class="div-block-7"></div><div class="text-block-planelistrandom">#{{planes[0].tag}}</div></a></div>
+      <div *ngIf="checkPlane(1)" class="column-2 w-col w-col-4"><a (click)="onClickPlane(planes[1])" class="link-block-plane w-inline-block"><img src={{getImage(planes[1])}} width="124" sizes="124px"><div class="div-block-7"></div><div class="text-block-planelistrandom">#{{planes[1].tag}}</div></a></div>
+      <div *ngIf="checkPlane(2)" class="column-3 w-col w-col-4"><a (click)="onClickPlane(planes[2])" class="link-block-plane w-inline-block"><img src={{getImage(planes[2])}} width="124" sizes="124px"><div class="div-block-7"></div><div class="text-block-planelistrandom">#{{planes[2].tag}}</div></a></div>
+
+      <div *ngIf="!checkPlane(0)" class="column w-col w-col-4"></div>
+      <div *ngIf="!checkPlane(1)" class="column w-col w-col-4"></div>
+      <div *ngIf="!checkPlane(2)" class="column w-col w-col-4"></div>
+    </div>
+    <div class="row-planelistrandom w-row">
+      <div *ngIf="checkPlane(3)" class="column-4 w-col w-col-4"><a (click)="onClickPlane(planes[3])" class="link-block-plane w-inline-block"><img src={{getImage(planes[3])}} width="124" sizes="124px"><div class="div-block-7"></div><div class="text-block-planelistrandom">#{{planes[3].tag}}</div></a></div>
+      <div *ngIf="checkPlane(4)" class="column-5 w-col w-col-4"><a (click)="onClickPlane(planes[4])" class="link-block-plane w-inline-block"><img src={{getImage(planes[4])}} width="124" sizes="124px"><div class="div-block-7"></div><div class="text-block-planelistrandom">#{{planes[4].tag}}</div></a></div>
+      <div *ngIf="checkPlane(5)" class="column-6 w-col w-col-4"><a (click)="onClickPlane(planes[5])" class="link-block-plane w-inline-block"><img src={{getImage(planes[5])}} width="124" sizes="124px"><div class="div-block-7"></div><div class="text-block-planelistrandom">#{{planes[5].tag}}</div></a></div>
+
+      <div *ngIf="!checkPlane(3)" class="column w-col w-col-4"></div>
+      <div *ngIf="!checkPlane(4)" class="column w-col w-col-4"></div>
+      <div *ngIf="!checkPlane(5)" class="column w-col w-col-4"></div>
+    </div>
+  </div>
+</div>
+

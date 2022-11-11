@@ -1,0 +1,29 @@
+<div class="section-write">
+  <div data-collapse="none" data-animation="default" data-duration="400" class="navbar-2 w-nav">
+    <div class="container-20 w-container">
+      <app-navigation-bar></app-navigation-bar>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-page-title w-container">
+    <h1 class="page-title">Write</h1>
+  </div>
+  <div class="container-paper w-container" [@slideInOut]="paperState">
+    <div class="form-block-paper w-form">
+      <form id="email-form" name="email-form" data-name="Email Form">
+        <label for="Write-Content" class="field-label-paper">Content</label>
+        <textarea [(ngModel)]="content" id="Write-Content" name="Write-Content" placeholder="What happened today?" maxlength="5000" data-name="Write Content" class="textarea-paper w-input"></textarea>
+        <label for="Write-Tag" class="field-label-paper">Tag</label>
+        <textarea [(ngModel)]="tag" id="Write-Tag" name="Write-Tag" placeholder="Explain Your Plane in <10 Characters!" maxlength="10" data-name="Write Tag" class="w-input"></textarea>
+        <div class="div-block-paper-button">
+          <a (click)="onClickCancelButton()" class="w-button write-button">Cancel</a>
+          <a (click)="onClickFoldButton()" class="w-button write-button">Fold</a></div>
+      </form>
+    </div>
+  </div>
+  <div [@slideInOut]="planeState">
+    <img src="assets/images/plane_animation_plain.png" width="300">
+  </div>
+</div>

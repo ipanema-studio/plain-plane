@@ -1,0 +1,28 @@
+<div class="section-sign-up">
+  <div class="w-container">
+    <div>
+      <h1 class="heading-sign-up-title">Welcome to Plain Plane</h1>
+      <div class="combo sign-form w-form">
+        <form id="email-form" name="email-form" data-name="Email Form" class="form-sign-up">
+          <label for="SignUp-Nickname" class="label-index-sign-in">Nickname</label>
+          <div class="div-block-signupnickname">
+            <input [(ngModel)]="username" type="text" class="w-input" maxlength="256" name="SignUp-Nickname" data-name="SignUp Nickname" placeholder="Enter your nickname" id="SignUp-Nickname">
+            <a (click)="checkUsernameAvailable()" class="button-signupvalid w-button">Valid?</a>
+          </div>
+          <label for="SignUp-Password" class="label-index-sign-in">Email (for account lost)</label>
+          <input [(ngModel)]="email" type="text" class="w-input" maxlength="256" name="SignUp-Password" data-name="SignUp Password" placeholder="Enter your email (optional)" id="SignUp-Password">
+          <label for="SignUp-Password-2" class="label-index-sign-in">Password</label>
+          <input [(ngModel)]="password" type="password" class="w-input" maxlength="256" name="SignUp-Password-2" data-name="Sign Up Password 2" placeholder="Enter your password" id="SignUp-Password-2">
+          <label for="SignUp-Password-2" class="label-index-sign-in">Password Again</label>
+          <input [(ngModel)]="password_repeat" type="password" class="w-input" maxlength="256" name="SignUp-Password-2" data-name="Sign Up Password 2" placeholder="Enter your password" id="SignUp-Password-2">
+          <div class="div-block-recaptcha">
+            <re-captcha [(ngModel)]="captcha_key" name="recaptcha" siteKey="6Lf5TDcUAAAAANeLNdS_ilT7bgHoBg9kKPnGpNPm"></re-captcha>
+          </div>
+          <div class="div-block-4">
+            <a (click)="onClickSignUpButton()" class="button-index combo w-button">Sign Up</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

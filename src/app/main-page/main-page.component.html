@@ -1,0 +1,71 @@
+<div class="section-index-sign-in">
+  <div class="w-container">
+    <div>
+      <h1 class="heading-index-title">Plain Plane</h1>
+      <div class="div-block-2"></div>
+      <div class="sign-form w-form">
+        <form id="email-form" name="email-form" data-name="Email Form">
+          <label for="Index-Nickname" class="label-index-sign-in">Nickname</label>
+          <input [(ngModel)]="username" type="text" class="w-input" maxlength="256" name="Index-Nickname" data-name="Index Nickname" placeholder="Enter your nickname" id="Index-Nickname">
+          <label for="Index-Password" class="label-index-sign-in">Password</label>
+          <input [(ngModel)]="password" type="password" class="w-input" maxlength="256" name="Index-Password" data-name="Index Password" placeholder="Enter your password" id="Index-Password">
+          <div class="div-block-4">
+            <button (click)="onClickSignInButton()" class="button-index w-button">Sign In</button>
+            <a (click)="onClickSignUpButton()" class="link-index-sign-up">Create an Account</a>
+            <a (click)="onClickFindPasswordButton()" class="combo link-index-sign-up">Forgot?</a>
+          </div>
+          <re-captcha #captchaRef="reCaptcha"
+                      [(ngModel)]="captcha_key"
+                      size="invisible"
+                      (resolved)="$event && doSignIn()"
+                      name="recaptcha"
+                      siteKey="6LdqTDcUAAAAAMrLPuUOsWhWlozOF3V8v6ntahx8">
+          </re-captcha>
+        </form>
+      </div>
+    </div><a href="#aboutus" class="link-block w-inline-block"><img src="assets/images/arrow.png" width="35" class="image-2"></a></div>
+</div>
+<div id="aboutus" class="section-index-about-us"><img src="assets/images/planefly.jpg" srcset="assets/images/planefly-p-500.jpeg 500w, assets/images/planefly-p-1080.jpeg 1080w, assets/images/planefly-p-1600.jpeg 1600w, assets/images/planefly.jpg 2000w" sizes="100vw" class="image-13">
+  <div class="container-17 w-container">
+    <h1 class="heading-8">Plain Plane</h1>
+    <h1 class="heading-9">Plain about your feelings and thoughts on a plain paper,<br>fold up a paper plane with it, fuel up with plain yogurt, and fly it to the sky.</h1>
+  </div>
+  <div class="container-18 w-container">
+    <div class="w-row">
+      <div class="column-index-aboutus-1 w-col w-col-4"><img src="assets/images/departure.png" srcset="assets/images/departure-p-500.png 500w, assets/images/departure.png 700w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 179.328125px, 249.984375px">
+        <h1 class="heading-index-aboutus-1-title">Write</h1>
+        <h3 class="heading-index-aboutus-1-content">Write about your honest feelings and thoughts. After writing, take a picture of the sky where your plane will fly through.</h3>
+      </div>
+      <div class="column-index-aboutus-1 w-col w-col-4"><img src="assets/images/arrival.png" srcset="assets/images/arrival-p-500.png 500w, assets/images/arrival.png 700w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 179.328125px, 249.984375px">
+        <h1 class="heading-index-aboutus-1-title">Reply</h1>
+        <h3 class="heading-index-aboutus-1-content">Pick up a plane and reply to it. The plane will be sent back to the writer.</h3>
+      </div>
+      <div class="column-index-aboutus-1 w-col w-col-4"><img src="assets/images/sky.png" srcset="assets/images/sky-p-500.png 500w, assets/images/sky.png 700w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 179.328125px, 249.984375px">
+        <h1 class="heading-index-aboutus-1-title">Sky Gallery</h1>
+        <h3 class="heading-index-aboutus-1-content">View all photos or search them by color. Share universal sentiment with people regarding sky.</h3><a (click)="onClickLookAroundButton()" class="button-3 w-button">Look Around</a></div>
+    </div>
+  </div>
+  <div class="container-19 w-container">
+    <div class="row-7 w-row">
+      <div class="w-col w-col-3"><img src="assets/images/yogurt_plain.png" srcset="assets/images/yogurt_plain-p-500.png 500w, assets/images/yogurt_plain.png 700w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 47vw, (max-width: 991px) 166.53125px, 219.515625px"></div>
+      <div class="column-8 w-col w-col-9">
+        <h1 class="heading-10">User Level System</h1>
+        <h1 class="heading-11">Sweeten up your yogurt by replying! Longer life span, more chances to write and reply.</h1>
+      </div>
+    </div>
+    <div class="row-8 w-row">
+      <div class="w-col w-col-9">
+        <h1 class="heading-10">Location-based</h1>
+        <h1 class="heading-11">You can share your feelings and thoughts with someone near you. Of course, you can also share them with people everywhere.</h1>
+      </div>
+      <div class="w-col w-col-3"><img src="assets/images/yogurt_strawberry.png" srcset="assets/images/yogurt_strawberry-p-500.png 500w, assets/images/yogurt_strawberry.png 700w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 47vw, (max-width: 991px) 166.53125px, 219.515625px"></div>
+    </div>
+    <div class="row-7 w-row">
+      <div class="w-col w-col-3"><img src="assets/images/yogurt_blueberry.png" srcset="assets/images/yogurt_blueberry-p-500.png 500w, assets/images/yogurt_blueberry.png 700w" sizes="(max-width: 479px) 180.671875px, (max-width: 767px) 47vw, (max-width: 991px) 166.53125px, 219.515625px"></div>
+      <div class="column-8 w-col w-col-9">
+        <h1 class="heading-10">1:1 Communication</h1>
+        <h1 class="heading-11">Don&#x27;t try to impress people, be yourself.</h1>
+      </div>
+    </div>
+  </div>
+</div>

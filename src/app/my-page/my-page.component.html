@@ -1,0 +1,50 @@
+<div class="section-11">
+  <div data-collapse="none" data-animation="default" data-duration="400" class="navbar-2 w-nav">
+    <div class="container-20 w-container">
+      <app-navigation-bar></app-navigation-bar>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-10 w-container">
+    <div><img *ngIf="user.level != ''" src={{getLevelImage()}} width="351" sizes="(max-width: 479px) 100vw, 351px"></div>
+    <div class="div-block-19">
+      <h1 class="heading-inbox-title">{{user.username}}'s {{user.level}} Yogurt</h1>
+      <h3 class="heading-inbox-planecount">Today's Remaining Planes: {{user.today_write_count}}</h3>
+      <h3 class="heading-inbox-replycount">Today's Remaining Replies: {{user.today_reply_count}}</h3>
+      <div>
+        <button (click)="onClickChangePasswordButton()" class="button-index combo w-button">Change Password</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div id="myreplies" class="section-13">
+  <div class="container-11 w-container">
+    <h1 class="page-title">My Replies</h1>
+  </div>
+  <div class="container-12 w-container">
+    <div class="row-inbox-replies w-row">
+      <div *ngIf="checkReply((pageIndex*6)+0)" class="column w-col w-col-4"><a (click)="onClickReply(replies[(pageIndex*6)+0])" class="link-block-plane w-inline-block"><img src={{getReplyImage(replies[(pageIndex*6)+0])}} width="124" sizes="(max-width: 479px) 60vw, 124px"><div class="div-block-7"></div><div class="text-block-inbox-replies">#{{replies[(pageIndex*6)+0].original_tag}}</div></a></div>
+      <div *ngIf="checkReply((pageIndex*6)+1)" class="column-2 w-col w-col-4"><a (click)="onClickReply(replies[(pageIndex*6)+1])" class="link-block-plane w-inline-block"><img src={{getReplyImage(replies[(pageIndex*6)+1])}} width="124" sizes="(max-width: 479px) 60vw, 124px"><div class="div-block-7"></div><div class="text-block-inbox-replies">#{{replies[(pageIndex*6)+1].original_tag}}</div></a></div>
+      <div *ngIf="checkReply((pageIndex*6)+2)" class="column-3 w-col w-col-4"><a (click)="onClickReply(replies[(pageIndex*6)+2])" class="link-block-plane w-inline-block"><img src={{getReplyImage(replies[(pageIndex*6)+2])}} width="124" sizes="(max-width: 479px) 60vw, 124px"><div class="div-block-7"></div><div class="text-block-inbox-replies">#{{replies[(pageIndex*6)+2].original_tag}}</div></a></div>
+
+      <div *ngIf="!checkReply((pageIndex*6)+0)" class="column w-col w-col-4"></div>
+      <div *ngIf="!checkReply((pageIndex*6)+1)" class="column w-col w-col-4"></div>
+      <div *ngIf="!checkReply((pageIndex*6)+2)" class="column w-col w-col-4"></div>
+    </div>
+    <div class="row-inbox-replies w-row">
+      <div *ngIf="checkReply((pageIndex*6)+3)" class="column w-col w-col-4"><a (click)="onClickReply(replies[(pageIndex*6)+3])" class="link-block-plane w-inline-block"><img src={{getReplyImage(replies[(pageIndex*6)+3])}} width="124" sizes="(max-width: 479px) 60vw, 124px"><div class="div-block-7"></div><div class="text-block-inbox-replies">#{{replies[(pageIndex*6)+3].original_tag}}</div></a></div>
+      <div *ngIf="checkReply((pageIndex*6)+4)" class="column-2 w-col w-col-4"><a (click)="onClickReply(replies[(pageIndex*6)+4])" class="link-block-plane w-inline-block"><img src={{getReplyImage(replies[(pageIndex*6)+4])}} width="124" sizes="(max-width: 479px) 60vw, 124px"><div class="div-block-7"></div><div class="text-block-inbox-replies">#{{replies[(pageIndex*6)+4].original_tag}}</div></a></div>
+      <div *ngIf="checkReply((pageIndex*6)+5)" class="column-3 w-col w-col-4"><a (click)="onClickReply(replies[(pageIndex*6)+5])" class="link-block-plane w-inline-block"><img src={{getReplyImage(replies[(pageIndex*6)+5])}} width="124" sizes="(max-width: 479px) 60vw, 124px"><div class="div-block-7"></div><div class="text-block-inbox-replies">#{{replies[(pageIndex*6)+5].original_tag}}</div></a></div>
+
+      <div *ngIf="!checkReply((pageIndex*6)+3)" class="column w-col w-col-4"></div>
+      <div *ngIf="!checkReply((pageIndex*6)+4)" class="column w-col w-col-4"></div>
+      <div *ngIf="!checkReply((pageIndex*6)+5)" class="column w-col w-col-4"></div>
+    </div>
+    <div class="div-block-20">
+      <a (click)="onClickPageDown()" class="button-inbox-previous w-button">&lt;</a>
+      <a (click)="onClickPageUp()" class="button-inbox-previous w-button">&gt;</a></div>
+  </div>
+</div>

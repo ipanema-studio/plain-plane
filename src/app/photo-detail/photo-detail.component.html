@@ -1,0 +1,22 @@
+<div class="section-16">
+  <div data-collapse="none" data-animation="default" data-duration="400" class="navbar-2 w-nav">
+    <div class="container-20 w-container">
+      <app-navigation-bar></app-navigation-bar>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-page-title w-container">
+    <h1 class="page-title">Gallery</h1>
+  </div>
+  <div class="container-paper w-container">
+    <div class="div-block-26"><img src={{photo.image}} srcset={{photo.image}} sizes="(max-width: 767px) 92vw, (max-width: 991px) 688px, 900px" class="image-15"></div>
+    <div class="div-block-28">
+      <div class="text-block-9">#{{tag}}</div>
+    </div>
+    <div class="div-block-27">
+      <a (click)="onClickReportButton(photo)" class="button-photopost w-button">Report</a>
+      <a (click)="goBack()" class="button-photopost w-button">Back</a></div>
+  </div>
+</div>

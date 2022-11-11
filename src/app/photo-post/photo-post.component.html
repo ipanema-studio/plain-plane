@@ -1,0 +1,29 @@
+<div class="section-10">
+  <div data-collapse="none" data-animation="default" data-duration="400" class="navbar-2 w-nav">
+    <div class="container-20 w-container">
+      <nav role="navigation" class="w-nav-menu"><a href="#" class="nav-link w-nav-link">Planes</a><a href="#" class="nav-link w-nav-link">Write</a><a href="#" class="nav-link w-nav-link">Gallery</a><a href="#" class="nav-link w-nav-link">My Page</a><a href="#" class="nav-link w-nav-link">Sign Out</a></nav>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-page-title w-container">
+    <h1 class="page-title">Photo Post</h1>
+  </div>
+  <div class="container-paper w-container">
+    {{image}}
+    <div class="div-block-14"><img src={{url}} srcset={{url}} sizes="(max-width: 767px) 90vw, (max-width: 991px) 678px, 890px" class="image-8"></div>
+    <div class="div-block-15"></div>
+    <div class="form-block w-form">
+      <input type="file" (change)="readUrl($event)" placeholder="Upload file" accept="image/*" #fileInput>
+      <form id="email-form" name="email-form" data-name="Email Form">
+        <textarea [(ngModel)]="tag" id="PhotoPost-Tag" name="PhotoPost-Tag" placeholder="Explain Your Photo in <10 Characters!" maxlength="10" data-name="PhotoPost Tag" class="textarea-2 w-input"></textarea>
+        <div class="div-block-16">
+          <a href="gallery.html" class="button-photopost w-button">Cancel</a>
+          <a *ngIf="!clicked" (click)="upload()" class="button-photopost w-button">Upload</a>
+          <a *ngIf="clicked" class="button-photopost-testing w-button">Testing</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="section-9">
+  <div data-collapse="none" data-animation="default" data-duration="400" class="navbar-2 w-nav">
+    <div class="container-20 w-container">
+      <app-navigation-bar></app-navigation-bar>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="combo container-page-title w-container">
+    <h1 class="page-title">Gallery</h1>
+  </div>
+  <div class="container-7 w-container">
+    <div class="div-block-12">
+      <a (click)="onClickColorPhotoButton(0)" class="button-gallery-colorred w-button"></a>
+      <a (click)="onClickColorPhotoButton(1)" class="button-gallery-colororange w-button"></a>
+      <a (click)="onClickColorPhotoButton(2)" class="button-gallery-coloryellow w-button"></a>
+      <a (click)="onClickColorPhotoButton(3)" class="button-gallery-colorgreen w-button"></a>
+      <a (click)="onClickColorPhotoButton(4)" class="button-gallery-colorblue w-button"></a>
+      <a (click)="onClickColorPhotoButton(5)" class="button-gallery-colorviolet w-button"></a>
+      <a (click)="getPhotos()" class="button-2 w-button">Refresh</a>
+    </div>
+  </div>
+  <div class="w-container">
+    <div class="combo row-gallery w-row">
+      <div *ngIf="checkPhoto(0)" class="column-gallery w-col w-col-4"><a (click)="goToDetail(photos[0])" class="w-inline-block"><img src={{photos[0].image}} srcset={{photos[0].image}} sizes="(max-width: 479px) 23vw, (max-width: 767px) 25vw, (max-width: 991px) 198.671875px, 269.328125px"></a><a (click)="onClickReportButton(photos[0])" class="link-block-gallery-report w-inline-block"><img src="assets/images/report.png" width="20"></a></div>
+      <div *ngIf="checkPhoto(1)" class="column-gallery w-col w-col-4"><a (click)="goToDetail(photos[1])" class="w-inline-block"><img src={{photos[1].image}} srcset={{photos[1].image}} sizes="(max-width: 479px) 23vw, (max-width: 767px) 25vw, (max-width: 991px) 198.671875px, 269.328125px"></a><a (click)="onClickReportButton(photos[1])" class="link-block-gallery-report w-inline-block"><img src="assets/images/report.png" width="20"></a></div>
+      <div *ngIf="checkPhoto(2)" class="column-gallery w-col w-col-4"><a (click)="goToDetail(photos[2])" class="w-inline-block"><img src={{photos[2].image}} srcset={{photos[2].image}} sizes="(max-width: 479px) 23vw, (max-width: 767px) 25vw, (max-width: 991px) 198.671875px, 269.328125px"></a><a (click)="onClickReportButton(photos[2])" class="link-block-gallery-report w-inline-block"><img src="assets/images/report.png" width="20"></a></div>
+
+      <div *ngIf="!checkPhoto(0)" class="column-gallery w-col w-col-4"></div>
+      <div *ngIf="!checkPhoto(1)" class="column-gallery w-col w-col-4"></div>
+      <div *ngIf="!checkPhoto(2)" class="column-gallery w-col w-col-4"></div>
+    </div>
+    <div class="combo row-gallery w-row">
+      <div *ngIf="checkPhoto(3)" class="column-gallery w-col w-col-4"><a (click)="goToDetail(photos[3])" class="w-inline-block"><img src={{photos[3].image}} srcset={{photos[3].image}} sizes="(max-width: 479px) 23vw, (max-width: 767px) 25vw, (max-width: 991px) 198.671875px, 269.328125px"></a><a (click)="onClickReportButton(photos[3])" class="link-block-gallery-report w-inline-block"><img src="assets/images/report.png" width="20"></a></div>
+      <div *ngIf="checkPhoto(4)" class="column-gallery w-col w-col-4"><a (click)="goToDetail(photos[4])" class="w-inline-block"><img src={{photos[4].image}} srcset={{photos[4].image}} sizes="(max-width: 479px) 23vw, (max-width: 767px) 25vw, (max-width: 991px) 198.671875px, 269.328125px"></a><a (click)="onClickReportButton(photos[4])" class="link-block-gallery-report w-inline-block"><img src="assets/images/report.png" width="20"></a></div>
+      <div *ngIf="checkPhoto(5)" class="column-gallery w-col w-col-4"><a (click)="goToDetail(photos[5])" class="w-inline-block"><img src={{photos[5].image}} srcset={{photos[5].image}} sizes="(max-width: 479px) 23vw, (max-width: 767px) 25vw, (max-width: 991px) 198.671875px, 269.328125px"></a><a (click)="onClickReportButton(photos[5])" class="link-block-gallery-report w-inline-block"><img src="assets/images/report.png" width="20"></a></div>
+
+      <div *ngIf="!checkPhoto(3)" class="column-gallery w-col w-col-4"></div>
+      <div *ngIf="!checkPhoto(4)" class="column-gallery w-col w-col-4"></div>
+      <div *ngIf="!checkPhoto(5)" class="column-gallery w-col w-col-4"></div>
+    </div>
+    <div class="row-gallery w-row">
+      <div *ngIf="checkPhoto(6)" class="column-gallery w-col w-col-4"><a (click)="goToDetail(photos[6])" class="w-inline-block"><img src={{photos[6].image}} srcset={{photos[6].image}} sizes="(max-width: 479px) 23vw, (max-width: 767px) 25vw, (max-width: 991px) 198.671875px, 269.328125px"></a><a (click)="onClickReportButton(photos[6])" class="link-block-gallery-report w-inline-block"><img src="assets/images/report.png" width="20"></a></div>
+      <div *ngIf="checkPhoto(7)" class="column-gallery w-col w-col-4"><a (click)="goToDetail(photos[7])" class="w-inline-block"><img src={{photos[7].image}} srcset={{photos[7].image}} sizes="(max-width: 479px) 23vw, (max-width: 767px) 25vw, (max-width: 991px) 198.671875px, 269.328125px"></a><a (click)="onClickReportButton(photos[7])" class="link-block-gallery-report w-inline-block"><img src="assets/images/report.png" width="20"></a></div>
+      <div *ngIf="checkPhoto(8)" class="column-gallery w-col w-col-4"><a (click)="goToDetail(photos[8])" class="w-inline-block"><img src={{photos[8].image}} srcset={{photos[8].image}} sizes="(max-width: 479px) 23vw, (max-width: 767px) 25vw, (max-width: 991px) 198.671875px, 269.328125px"></a><a (click)="onClickReportButton(photos[8])" class="link-block-gallery-report w-inline-block"><img src="assets/images/report.png" width="20"></a></div>
+
+      <div *ngIf="!checkPhoto(6)" class="column-gallery w-col w-col-4"></div>
+      <div *ngIf="!checkPhoto(7)" class="column-gallery w-col w-col-4"></div>
+      <div *ngIf="!checkPhoto(8)" class="column-gallery w-col w-col-4"></div>
+    </div>
+  </div>
+  <div class="container-8 w-container"><a (click)="goCreate()" class="button-gallery w-button">Post New Photo</a></div>
+</div>
